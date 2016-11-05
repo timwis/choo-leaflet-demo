@@ -1,7 +1,8 @@
 const choo = require('choo')
 const html = require('choo/html')
 
-const Map = require('./map')
+const initMap = require('./map')
+const map = initMap()
 
 const app = choo()
 
@@ -27,7 +28,7 @@ const View = (state, prev, send) => {
       <div><input value=${state.title} oninput=${updateTitle}/></div>
       <button onclick=${toPhiladelphia}>Philadelphia</button>
       <button onclick=${toSeattle}>Seattle</button>
-      ${Map(state.coords)}
+      ${map(state.coords)}
     </main>
   `
   function updateTitle (evt) {
