@@ -1,0 +1,24 @@
+{
+  "name": "choo-leaflet-demo",
+  "version": "0.1.0",
+  "description": "",
+  "main": "map.js",
+  "scripts": {
+    "start": "budo src/index.js:dist/bundle.js --live --open",
+    "build": "mkdir -p dist && browserify src/index.js -o dist/bundle.js",
+    "deploy": "npm run build && surge . -d choo-leaflet-demo.surge.sh"
+  },
+  "keywords": [],
+  "author": "timwis <tim@timwis.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cache-element": "^1.1.1",
+    "choo": "^3.3.0",
+    "leaflet": "^1.0.1"
+  },
+  "devDependencies": {
+    "bel": "^4.5.0",
+    "browserify": "^13.1.1",
+    "surge": "^0.18.0"
+  }
+}
