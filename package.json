@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "cache-element": "^2.0.0",
-    "choo": "^3.3.0",
+    "choo": "^4.0.3",
     "leaflet": "^1.0.1"
   },
   "devDependencies": {

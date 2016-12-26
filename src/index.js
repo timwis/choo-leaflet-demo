@@ -12,10 +12,10 @@ app.model({
     coords: [39.9526, -75.1652]
   },
   reducers: {
-    setCoords: (data, state) => {
+    setCoords: (state, data) => {
       return { coords: data }
     },
-    updateTitle: (data, state) => {
+    updateTitle: (state, data) => {
       return { title: data }
     }
   }
@@ -42,8 +42,8 @@ const View = (state, prev, send) => {
   }
 }
 
-app.router((route) => [
-  route('/', View)
+app.router([
+  ['/', View]
 ])
 
 const tree = app.start()
