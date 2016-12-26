@@ -4,6 +4,7 @@ const html = require('choo/html')
 const Map = require('./map')
 
 const app = choo()
+const mapInstance = Map()
 
 app.model({
   state: {
@@ -11,10 +12,10 @@ app.model({
     coords: [39.9526, -75.1652]
   },
   reducers: {
-    setCoords: (data, state) => {
+    setCoords: (state, data) => {
       return { coords: data }
     },
-    updateTitle: (data, state) => {
+    updateTitle: (state, data) => {
       return { title: data }
     }
   }
@@ -27,7 +28,7 @@ const View = (state, prev, send) => {
       <div><input value=${state.title} oninput=${updateTitle}/></div>
       <button onclick=${toPhiladelphia}>Philadelphia</button>
       <button onclick=${toSeattle}>Seattle</button>
-      ${Map(state.coords)}
+      ${mapInstance(state.coords)}
     </main>
   `
   function updateTitle (evt) {
@@ -41,8 +42,8 @@ const View = (state, prev, send) => {
   }
 }
 
-app.router((route) => [
-  route('/', View)
+app.router([
+  ['/', View]
 ])
 
 const tree = app.start()

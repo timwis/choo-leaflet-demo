@@ -12,8 +12,8 @@
   "author": "timwis <tim@timwis.com>",
   "license": "MIT",
   "dependencies": {
-    "cache-element": "^1.1.1",
-    "choo": "^3.3.0",
+    "cache-element": "^2.0.0",
+    "choo": "^4.0.3",
     "leaflet": "^1.0.1"
   },
   "devDependencies": {
