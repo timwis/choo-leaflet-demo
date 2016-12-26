@@ -12,7 +12,7 @@
   "author": "timwis <tim@timwis.com>",
   "license": "MIT",
   "dependencies": {
-    "cache-element": "^1.1.1",
+    "cache-element": "^2.0.0",
     "choo": "^3.3.0",
     "leaflet": "^1.0.1"
   },
